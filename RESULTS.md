@@ -143,6 +143,35 @@ strategy advantage. Slower timeframes meaningfully reduce cost drag,
 but reducing damage is not the same as proving a strategy works.
 
 
+## EMA vs SMA comparison (v3)
+
+Same engine, same 1-year dataset, same costs — only the moving-average
+type changed (SMA 20/50 vs EMA 20/50, both crossover-based).
+
+| Timeframe | SMA Return | SMA Win% | EMA Return | EMA Win% |
+|---|---|---|---|---|
+| 1-minute | -100.00% | 27.6% | -100.00% | 23.2% |
+| 5-minute | -98.01% | 31.4% | -97.55% | 23.8% |
+| 15-minute | -77.67% | 33.7% | -77.05% | 29.2% |
+| 1-hour | -75.26% | 30.3% | -67.15% | 17.2% |
+| 4-hour | +17.60% | 33.3% | -43.95% | 14.8% |
+
+EMA's win rate is lower than SMA's at every single timeframe tested - a
+consistent 5-for-5 pattern, not noise. Most tellingly, EMA did not
+replicate SMA's one apparently "winning" 4-hour result: EMA lost 43.95%
+over the same period SMA gained 17.60%. Since EMA is a close structural
+cousin of SMA (same crossover idea, faster-reacting average), a real
+trend-following edge in this market should plausibly show up in both.
+Its absence in EMA is further evidence the SMA 4-hour result was driven
+by chance (two outlier trades, documented above) rather than a genuine,
+repeatable edge.
+
+**Conclusion:** faster-reacting EMA does not outperform SMA on R_100 -
+if anything, it performs modestly worse by win rate across the board.
+Neither moving-average type produces a reliable edge once realistic
+costs are included, across any timeframe tested.
+
+
 
 \## Reproducing this result
 
